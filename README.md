@@ -13,48 +13,48 @@ EvFrame主要用于高策略性RPG游戏的复杂事件处理,可以适应于需
 EvFrame 是一个专为复杂策略性RPG设计的模块化事件处理框架。它通过**分阶段事件处理**、**自定义修饰器**和**动态监听器**机制，实现了对嵌套事件、连锁反应和动态逻辑修改的深度支持。其核心设计理念是"事件即消息"，所有游戏逻辑（如攻击、治疗、技能效果）均通过消息传递实现，为开发者提供了极高的灵活性和扩展性。
 
 ## 流程图
-
+```mermaid
 %% 消息处理流程图
 graph TD
-    A[创建GameMessage] --> B{Phase是否为NONE?}
-    B -->|是| C[拆分为PRE-MAIN-POST三阶段消息]
-    B -->|否| D[直接加入消息队列]
-    C --> E[按顺序加入队列]
+    A[Create GameMessage] --> B{Phase is NONE?}
+    B -->|Yes| C[Split into PRE-MAIN-POST]
+    B -->|No| D[Add to Queue]
+    C --> E[Add to Queue in Order]
     
-    subgraph 消息队列处理
+    subgraph Message Processing
         direction TB
-        E --> F[从队列取出消息]
+        E --> F[Pop Message]
         D --> F
-        F --> G[广播给监听器]
-        G --> H{生成新消息?}
-        H -->|是| I[新消息加入队列]
-        H -->|否| J[应用修饰器]
-        J --> K{是否注册<br>自定义修饰器?}
-        K -->|是| L[执行自定义处理]
-        K -->|否| M[应用基础修饰器]
-        L --> N[广播修改事件]
+        F --> G[Broadcast to Listeners]
+        G --> H{Generate New Msg?}
+        H -->|Yes| I[Enqueue New Msg]
+        H -->|No| J[Apply Modifiers]
+        J --> K{Custom Modifier?}
+        K -->|Yes| L[Execute Custom Logic]
+        K -->|No| M[Apply Base Modifiers]
+        L --> N[Broadcast MODIFY Event]
         M --> N
-        N --> O[执行阶段处理器]
-        O --> P{处理结果}
-        P -->|CONTINUE| Q[继续下个消息]
-        P -->|STOP| R[清空队列]
-        P -->|SKIP| S[跳过同类型后续阶段]
-        P -->|RE_INPUT| T[重新输入消息]
+        N --> O[Execute Phase Handler]
+        O --> P{Result}
+        P -->|CONTINUE| Q[Process Next]
+        P -->|STOP| R[Clear Queue]
+        P -->|SKIP| S[Skip Same Type]
+        P -->|RE_INPUT| T[Re-Input Msg]
     end
     
-    subgraph 示例：攻击事件
-        direction TB
-        U[ATTACK消息] --> V[PRE阶段：计算基础伤害]
-        V --> W[MAIN阶段：应用暴击/闪避]
-        W --> X[POST阶段：触发荆棘护甲]
-        X --> Y[生成DAMAGE反弹消息]
-        Y --> Z[触发活力技能]
-        Z --> AA[生成HEAL消息]
+    subgraph "Example: Attack Flow"
+        direction LR
+        U(ATTACK) --> V[[PRE Phase]]
+        V -->|Calc Base Dmg| W[[MAIN Phase]]
+        W -->|Apply Crit/Dodge| X[[POST Phase]]
+        X -->|Trigger Skills| Y(Generate DAMAGE)
+        Y -->|Chain Reaction| Z(Generate HEAL)
     end
 
     style A fill:#f9f,stroke:#333
     style U fill:#cdf,stroke:#369
     style Q fill:#cfc,stroke:#093
+```
 
 ---
 
