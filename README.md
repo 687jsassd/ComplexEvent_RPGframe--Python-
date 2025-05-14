@@ -3,6 +3,11 @@
 ![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## 更简单的框架？
+EvFrame主要用于高策略性RPG游戏的复杂事件处理,可以适应于需要高度自定义和动态修改事件处理逻辑的或者多层嵌套和连锁的复杂系统。
+如果你只是简单的做一个简单的游戏，建议使用更简单的框架
+->[更简单的框架](https://github.com/687jsassd/simple-passive-skill-framework-with-py)
+
 ## 概述
 
 EvFrame 是一个专为复杂策略性RPG设计的模块化事件处理框架。它通过**分阶段事件处理**、**自定义修饰器**和**动态监听器**机制，实现了对嵌套事件、连锁反应和动态逻辑修改的深度支持。其核心设计理念是"事件即消息"，所有游戏逻辑（如攻击、治疗、技能效果）均通过消息传递实现，为开发者提供了极高的灵活性和扩展性。
