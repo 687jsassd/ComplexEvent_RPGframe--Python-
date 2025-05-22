@@ -1,0 +1,19 @@
+2025-05-12 v0.0.1a Evframe,BaseGameClasses
+1.完成基本消息系统
+
+2025-05-14 v0.0.2a Evframe,BaseGameClasses
+1.完成完整基本功能（单线程），支持test.py的测试
+-已知bug #1 test.py的测试下会偶见数据不符合预期。
+
+2025-05-22 v0.0.11a Evframe
+1.添加messagechain的find_message,find_all_message方法，用于查找指定类型,阶段的指定条消息或全部消息。
+2.添加messagechain的变量表及对应的多种方法，现在支持在消息链中增添改善变量，增加了拓展灵活度。
+3.添加MessageManager的reset方法，修正clear方法的方法名错误，为execte方法添加执行结束后重置消息链的功能，以方便重用。
+4.修改了test.py，消除了测试时的随机性，保证测试符合预期；添加单测完毕后立刻重置消息管理器等，保证隔离。
+5.添加了各个模块的reset方法，确保复用性。
+6.为消息管理器的handler属性进行了修改，修改为默认每个不同的MessageManager对象拥有不同的Handler而不是同一个MainHandler以确保同步。
+注意 这个修改之后，如果要在战斗中临时添加注册，则需要修改战斗时的临时Handler，而不该是消息管理器的handler。
+7.添加了test.py的一个新测试用例用于测试消息链变量与自定义modifier。
+8.添加了若干内置modifier方法。
+9.增强类型检查，增强了代码健壮性。
+

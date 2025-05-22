@@ -1,8 +1,8 @@
 #Evframe.py
 #Author: assd687
-#Version: 0.0.2a
+#Version: 0.0.11a
 #Description: A simple RPG event trigger frame.
-#Date: 2025-05-14
+#Date: 2025-05-22
 
 from typing import Optional,List,Dict,Tuple,Deque,Set,Callable,Any,Protocol,Union,DefaultDict
 from dataclasses import dataclass
@@ -21,12 +21,14 @@ class EventResult(Enum):
     RE_INPUT = auto() #重新输入
 #消息处理阶段的枚举
 class MessagePhase(Enum):
-    PRE = auto() #预处理
-    MAIN = auto() #主处理
-    POST = auto() #后处理
-    NONE = auto() #无(这类消息，事件管理器会自动拆分为PRE,MAIN和POST)
+    PRE = 0  #预处理(值0)
+    MAIN = 1  #主处理(值1)
+    POST = 2  #后处理(值2)
+    NONE = 3  #无(这类消息，事件管理器会自动拆分为PRE,MAIN和POST,值3)
 #作为Message中extra的一些可用关键字
 class MessageExtra(Enum):
+    #消息处理过程相关
+    IGNORE = ("ignore", bool)   # (是否忽略该消息, 必须为布尔值)
     #消息加工过程相关
     MODIFY_TYPE = ("modify_type", str)    # (修改的消息类型, 必须为字符串)
     MODIFY_VALUE = ("modify_value", Any)  # (修改的值, 可以是任意类型)
@@ -47,6 +49,16 @@ class MessageExtra(Enum):
     def expected_type(self):
         return self.value[1]
 
+#作为内置MODIFY_TYPE的枚举(用于消息加工)
+class ModifierType(Enum):
+    SET_VALUE = auto() #对数值的修改
+    SET_SENDER = auto() #设置发送者
+    SET_RECEIVER = auto() #设置接受者
+    UPDATE_EXTRA = auto() #更新extra中的值
+    REMOVE_EXTRA = auto() #移除extra中的值
+    REMOVE_MODIFIER = auto() #移除一个Modifier
+    
+    
 
 #中心事件处理器，统一处理基本事件如受伤，加血。
 #角色和技能应该由这个处理器注册和统一管理。处理的对象仅限于已经被注册的对象(后期修改)。
@@ -309,6 +321,7 @@ def _handle_attack(msg: 'GameMessage') ->Tuple[int, EventResult, str]: #type: ig
         if random.randint(1,100)<=msg.sender.i.critical:
             dmg*=(msg.sender.i.critical_damage)//100
             ret_msg.add_extra(MessageExtra.CRIT,True)
+            print("触发暴击！")
         else:
             ret_msg.add_extra(MessageExtra.CRIT,False)
         ret_msg.add_extra(MessageExtra.AFTER_CRIT_DAMAGE,dmg)
@@ -317,6 +330,7 @@ def _handle_attack(msg: 'GameMessage') ->Tuple[int, EventResult, str]: #type: ig
         if random.randint(100,200)<=100+msg.receiver.i.evasion:
             ret_msg.add_extra(MessageExtra.DODGE,True)
             dmg=0
+            print("触发闪避！")
         else:
             ret_msg.add_extra(MessageExtra.DODGE,False)
         
@@ -334,7 +348,7 @@ def _handle_damage(msg: 'GameMessage') -> Tuple[int, EventResult, str]: #type: i
         # 确保msg.value是int类型
         damage_value = msg.value(msg) if callable(msg.value) else msg.value
         msg.receiver.i.change_attribute('current_hp', -damage_value)
-        logger.info(f"[伤害处理] {msg.receiver.i.name} 受到 {damage_value} 点伤害，剩余HP: {msg.receiver.i.current_hp}")
+        print(f"[伤害处理] {msg.receiver.i.name} 受到 {damage_value} 点伤害，剩余HP: {msg.receiver.i.current_hp}")
         return (0,EventResult.CONTINUE,"无错误")
     return (-1,EventResult.RE_INPUT,"[伤害处理]错误:没有接受者或无效伤害值")
 
@@ -346,7 +360,7 @@ def _handle_heal(msg: 'GameMessage') -> Tuple[int, EventResult, str]: #type: ign
         heal_value = msg.value(msg) if callable(msg.value) else msg.value
         if heal_value > 0:
             msg.receiver.i.change_attribute('current_hp', heal_value)
-            logger.info(f"[治疗处理] {msg.receiver.i.name} 恢复 {heal_value} 点生命，剩余HP: {msg.receiver.i.current_hp}")
+            print(f"[治疗处理] {msg.receiver.i.name} 恢复 {heal_value} 点生命，剩余HP: {msg.receiver.i.current_hp}")
             return (0, EventResult.CONTINUE, "无错误")
     return (-1, EventResult.RE_INPUT, "[治疗处理]错误:没有接受者或无效治疗值")
 
@@ -369,7 +383,8 @@ class MessageManager:
     def __init__(self,handler:Handler=Mainhandler):
         self.listener:List[ListenerProtocal]=[]
         self.messagechain=MessageChain(self)
-        self.handler=handler
+        self.base_handler=handler
+        self.handler=Handler(self.base_handler)
         self.processor=MessageProcessor(self)
         self.uuid=uuid.uuid4()
         
@@ -394,11 +409,18 @@ class MessageManager:
         self.listener.remove(objec)
         logger.info(f'移除{objec}')
 
-    def clear_(self):
+    def clear(self):
         '''清空监听器'''
         self.listener.clear()
         logger.info('清空所有监听器')
-        
+    
+    def reset(self):
+        """重置消息管理器"""
+        self.clear()
+        self.handler=Handler(self.base_handler)
+        self.messagechain.clear()
+        logger.info("重置消息管理器")
+    
     def acceptmsg(self, msg:'GameMessage'): #一般消息左插入
             '''
             接受一般消息，并插入到队列左端，即立刻执行
@@ -524,6 +546,8 @@ class MessageManager:
         '''执行消息队列中的所有消息'''
         while self.messagechain.i and self.execte_single():
             pass
+        #执行结束后，初始化消息链，以重用
+        self.messagechain.i.clear()
     def __bool__(self):
         '''
            返回消息队列是否为空
@@ -555,28 +579,55 @@ class MessageProcessor:
                 return False
         msg.clr_modifiers()
         return True
-    def _apply_modifier(self,msg:'GameMessage',mod_type:str,val:Any)->bool:
+    def _apply_modifier(self,msg:'GameMessage',mod_type:Union[str,ModifierType],val:Any)->bool:
         '''
            应用modifier,并广播修改消息和修改后的消息。
            对于修改后的消息，不对已经相应过的对象进行广播。
         '''
-        modify_type:str=mod_type
+        modify_type:Union[str,ModifierType]=mod_type
         raw_value:Any=None
         modify_value:Any= val(msg) if callable(val) else val
         
         
         match mod_type:
-            case 'set_value':
+            case ModifierType.SET_VALUE:
                 raw_value=msg.value
                 msg.value=modify_value
-            case 'set_sender':
+            case ModifierType.SET_SENDER:
                 raw_value=msg.sender
                 msg.sender=modify_value
-            case'set_receiver':
+            case ModifierType.SET_RECEIVER:
                 raw_value=msg.receiver
                 msg.receiver=modify_value
+            case ModifierType.UPDATE_EXTRA:
+                if not (isinstance(val, tuple) and len(val) == 2 and isinstance(val[0], MessageExtra)):
+                    logger.info(f'因格式错误而更新Extra信息失败:{val}')
+                    return False
+                if msg.extra:
+                    raw_value = next((v for k, v in msg.extra if k == val[0]), None)
+                    if raw_value:
+                        msg.rmv_extra(val[0])
+                    msg.add_extra(*val)
+                else:
+                    msg.add_extra(*val)
+                    raw_value=None
+            case ModifierType.REMOVE_EXTRA:
+                if not isinstance(val,MessageExtra):
+                    logger.info(f'因格式错误而移除Extra信息失败:{val}')
+                    return False
+                if msg.extra:
+                    raw_value = next((v for k, v in msg.extra if k == val), None)
+                    msg.rmv_extra(val)
+            case ModifierType.REMOVE_MODIFIER:
+                if not isinstance(val, Union[str,ModifierType]):
+                    logger.info(f'因格式错误而移除Modifier信息失败:{val}')
+                    return False
+                if msg.modifiers:
+                    raw_value = next(((k,v) for k, v in msg.modifiers if k == val), None)
+                    msg.rmv_modifier(raw_value)
+                    
             case _:
-                if self.manager.handler.is_reg(mod_type):
+                if isinstance(mod_type,str) and self.manager.handler.is_reg(mod_type):
                     raw_value,modify_value,result=self.manager.handler.handle_modifier(msg,mod_type,val)
                     if not result:
                         logger.info(f'应用修饰失败:{mod_type}')
@@ -604,13 +655,54 @@ class MessageChain:
         self.uuid=uuid.uuid4() #消息链ID
         self.msgchains:List[GameMessage]=[] #记录消息链
         self.reacted_objects:DefaultDict[ListenerProtocal,int]=defaultdict(int) #已处理的对象及其次数
+        self.variables:Dict[str,Dict[str,Any]]={} #消息链变量表
         self._api=MessageChainAPI(self) #API接口
     
     @property
     def i(self):
         return self._api
-        
     
+    def add_variable(self,sign:str, key: str, value: Any) -> None:
+        """添加或更新消息链变量"""
+        if sign not in self.variables:
+            self.variables[sign] = {}
+        self.variables[sign][key] = value
+        logger.info(f'添加消息链变量: {sign}.{key} = {value}')
+
+    def get_variable(self,sign:str, key: str, default: Any = None) -> Any:
+        """获取消息链变量"""
+        return self.variables.get(sign, {}).get(key, default)
+    
+    def rmv_variable(self, sign: str, key: str) -> Tuple[bool, Any]:
+        """移除消息链变量
+        参数:
+            sign: 作用域签名
+            key: 要移除的变量名
+        返回:
+            (是否成功移除, 变量值)
+        """
+        if sign in self.variables and key in self.variables[sign]:
+            value = self.variables[sign].pop(key)
+            return (True, value)
+        return (False, None)
+                
+    def clr_variables(self,sign:Optional[str]=None) -> None:
+        """清空消息链变量"""
+        if not sign:
+            self.variables.clear()
+            logger.info('消息链变量表已清空')
+        else:
+            if sign in self.variables:
+                self.variables[sign].clear()
+                logger.info(f'消息链变量表[{sign}]已清空')
+            else:
+                logger.info(f'消息链变量表[{sign}]不存在')
+    
+    def exists_variable(self, sign: str, key: str) -> bool:
+        """检查消息链变量是否存在"""
+        return sign in self.variables and key in self.variables[sign]      
+        
+        
     def acceptmsg(self,msg:'GameMessage'): #一般消息左插入
         '''
            接受一般消息，并插入到队列左端
@@ -635,6 +727,16 @@ class MessageChain:
         '''
         self.queue.clear()
         logger.info('消息链已经清空')
+        
+    def reset(self):
+        '''
+           重置所有消息链相关的变量
+        '''
+        self.clear()
+        self.msgchains.clear()
+        self.reacted_objects.clear()
+        self.variables.clear()
+        logger.info('消息链已重置')
     def __len__(self):
         '''
            返回消息队列长度
@@ -654,6 +756,8 @@ class MessageChainAPI:
         self._msgchains = chain.msgchains
         self._reacted_objects = chain.reacted_objects
         self._manager = chain.manager
+        self._variables = chain.variables
+        
     @property
     def length(self):
         return len(self._queue)
@@ -672,19 +776,32 @@ class MessageChainAPI:
     @property
     def queue(self):
         return self._queue
-        
+      
+    #队列消息部分  
     def pop(self):
-        return self._queue.popleft() if self._queue else None
+        return self.chain.pop() if self.chain else None
     def clear(self):
-        self._queue.clear()
+        self.chain.clear()
     def acceptmsg(self,msg:'GameMessage'): #一般消息左插入
-        self._queue.appendleft(msg)
+        self.chain.acceptmsg(msg)
     def acceptmsgp(self,msg:'GameMessage'): #优先消息右插入
-        self._queue.append(msg)
-        
+        self.chain.acceptmsgp(msg) 
     def contains_type(self, msg_type: str) -> bool:
         """检查队列中是否包含指定类型的消息"""
         return any(msg.type == msg_type for msg in self._queue)
+    def find_message(self, msg_type: str,phase:MessagePhase = MessagePhase.NONE,th :int = 1) -> Optional['GameMessage']:
+        """查找队列中指定类型和阶段的第th条消息"""
+        for msg in self._queue:
+            if msg.type == msg_type and msg.phase == phase:
+                th-=1
+                if th==0:
+                    return msg
+        return None
+    def find_all_messages(self, msg_type: str,phase:MessagePhase = MessagePhase.NONE) -> List['GameMessage']:
+        """查找队列中指定类型和阶段的所有消息"""
+        return [msg for msg in self._queue if msg.type == msg_type and msg.phase == phase]
+    
+    #reacted已处理对象部分
     def update_reacted_objects(self, obj: ListenerProtocal) -> None:
         """更新已处理的对象及其次数"""
         self._reacted_objects[obj] += 1
@@ -693,25 +810,54 @@ class MessageChainAPI:
         self._reacted_objects.clear()
     def get_reacted_objects(self,objec:ListenerProtocal) -> int:
         """获取已处理的对象及其次数"""
-        return self._reacted_objects.get(objec,0)
-        
+        return self._reacted_objects.get(objec,0)    
     def is_reacted(self,objec:ListenerProtocal) -> bool:
         """检查对象是否已经处理过"""
         return objec in self._reacted_objects
-    
+   
+    #消息链部分 
     def update_msgchains(self, msg: 'GameMessage') -> None:
         """更新消息链"""
-        self._msgchains.append(msg)
-        
+        self._msgchains.append(msg)    
     def clr_msgchains(self) -> None:
         """清空消息链"""
         self._msgchains.clear()
+    def find_msgchain(self, msg_type: str,th: int=1) -> Optional['GameMessage']:
+        """查找消息链中指定类型的第th条消息"""
+        for msg in self._msgchains:
+            if msg.type == msg_type:
+                th-=1
+                if th==0:
+                    return msg
+        return None
     
+    #变量部分(由于面向用户编写，所以简化函数名)
+    def vadd(self,sign:str, key: str, value: Any) -> None:
+        """添加或更新消息链变量"""
+        self.chain.add_variable(sign, key, value)
+    def vget(self,sign:str, key: str, default: Any = None) -> Any:
+        """获取消息链变量"""
+        return self.chain.get_variable(sign, key, default)
+    def vrmv(self, sign: str, key: str) -> Tuple[bool, Any]:
+        """移除消息链变量"""
+        return self.chain.rmv_variable(sign, key)
+    def vpop(self,sign:str, key: str, default: Any = None) -> Any:
+        """弹出消息链变量"""
+        return self.vrmv(sign, key)[1] or default
+    def vclr(self,sign:Optional[str]=None) -> None:
+        """清空消息链变量"""
+        self.chain.clr_variables(sign)
+    def vall(self,sign:Optional[str]=None) -> Dict[str, Any]:
+        """获取消息链变量"""
+        return self.chain.variables
+    def vhave(self, sign: str, key: str) -> bool:
+        """检查消息链变量是否存在"""
+        return self.chain.exists_variable(sign,key)
+    
+    #其他
     def clr(self):
         """初始化所有变量"""
-        self._queue.clear()
-        self._reacted_objects.clear()
-        self._msgchains.clear()
+        self.chain.reset()
         
     def __bool__(self):
         return bool(self._queue)
@@ -726,7 +872,7 @@ class GameMessage:
     extra:Optional[List[Tuple[MessageExtra,Any]]]=None #额外信息
     sender:Optional[bgc.Character]=None #发送者
     receiver:Optional[bgc.Character]=None #接收者
-    modifiers:Optional[List[Tuple[str, Union[int, Callable[['GameMessage'], int]]]]]=None #消息修饰器(唯一可修改，其他的必须由消息加工阶段根据修饰器进行修改)
+    modifiers:Optional[List[Tuple[Union[str,ModifierType], Union[int, Callable[['GameMessage'], int]]]]]=None #消息修饰器(唯一可修改，其他的必须由消息加工阶段根据修饰器进行修改)
     phase:MessagePhase=MessagePhase.NONE #消息阶段.注意：不应该直接使用，由消息处理器决定
     check_body:Optional['GameMessage']=None #检查消息体,用于不同Phase的消息同步，一般是MAIN的检查消息体为PRE，POST的检查消息体为MAIN。
     
@@ -738,7 +884,7 @@ class GameMessage:
             return pre,main,post
         else:
             raise ValueError('消息已经经过拆分')
-    def modify(self, modifier: Tuple[str, Union[int, Callable[['GameMessage'], int]]]):  # 修改这里
+    def modify(self, modifier: Tuple[Union[str,ModifierType], Union[int, Callable[['GameMessage'], int]]]):  # 修改这里
         if self.modifiers:
             self.modifiers.append(modifier)
         else:
@@ -748,7 +894,10 @@ class GameMessage:
         """安全获取value值的方法"""
         return self.value(self) if callable(self.value) else self.value
     
-    def rmv_modifier(self,modifier: Tuple[str, Union[int, Callable[['GameMessage'], int]]]): #清除修饰器
+    def next_phase(self) -> MessagePhase: #获取下一个消息阶段
+        return MessagePhase((self.phase.value + 1)%4)
+    
+    def rmv_modifier(self,modifier: Tuple[Union[str,ModifierType], Union[int, Callable[['GameMessage'], int]]]): #清除修饰器
         if self.modifiers:
             self.modifiers.remove(modifier)
     
@@ -789,7 +938,7 @@ class GameMessage:
               extra: Optional[List[Tuple[MessageExtra, Any]]] = None,
               sender: Optional[bgc.Character] = None,
               receiver: Optional[bgc.Character] = None,
-              modifiers: Optional[List[Tuple[str, Union[int, Callable[['GameMessage'], int]]]]] = None,
+              modifiers: Optional[List[Tuple[Union[str,ModifierType], Union[int, Callable[['GameMessage'], int]]]]] = None,
               phase: MessagePhase = MessagePhase.NONE,
               check_body: Optional['GameMessage'] = None) -> 'GameMessage':
         # 确保value是int或返回int的回调函数
