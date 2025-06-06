@@ -6,7 +6,7 @@
 # Date: 2025-06-06
 """
 from __future__ import annotations
-from typing import List, TYPE_CHECKING, Any
+from typing import List, TYPE_CHECKING, Any, Optional
 from abc import ABC
 from dataclasses import dataclass
 import uuid
@@ -233,8 +233,8 @@ class Character(ABC):
 
     def __init__(self,
                  attributes: BasicCharacterAttributes,
-                 skills: List[Skill] = None,
-                 items: List[Item] = None,):
+                 skills: Optional[List[Skill]] = None,
+                 items: Optional[List[Item]] = None,):
         self.attributes = attributes
         # 显式初始化
         self.skills: List[Skill] = skills if skills is not None else list()
