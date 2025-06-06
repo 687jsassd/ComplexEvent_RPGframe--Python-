@@ -3,7 +3,7 @@ import logging
 import threading
 import random
 from typing import Any, List, Tuple  # type:ignore
-from BaseGameClasses import (
+from basegameclasses import (
     BasicCharacterAttributes,
     Character,
     BasicSkillAttributes,
@@ -47,7 +47,7 @@ class ThornArmorSkill(PassiveSkill):
                 # 创建反弹伤害消息
                 reflect_msg = msg.create(
                     messagechain=msg.messagechain,
-                    type="DAMAGE",
+                    msg_type="DAMAGE",
                     sender=msg.receiver,
                     receiver=msg.sender,
                     value=reflect_dmg,
@@ -72,7 +72,7 @@ class HealSkill(PassiveSkill):
             print(f'{self.i.owner}活力触发! 回复1HP')
             react_msg = msg.create(
                 messagechain=msg.messagechain,
-                type='HEAL',
+                msg_type='HEAL',
                 sender=self.i.owner,
                 receiver=self.i.owner,
                 value=1,
@@ -221,7 +221,7 @@ class TestSystem(unittest.TestCase):
                         # 创建反弹伤害
                         reflect_msg = msg.create(
                             messagechain=msg.messagechain,
-                            type="DAMAGE",
+                            msg_type="DAMAGE",
                             sender=self.i.owner,
                             receiver=msg.sender,
                             value=reflect,
@@ -248,7 +248,7 @@ class TestSystem(unittest.TestCase):
                     print(f"{self.i.owner.i.name} 触发技能C，治疗{msg.receiver.i.name}")
                     heal_msg = msg.create(
                         messagechain=msg.messagechain,
-                        type="HEAL",
+                        msg_type="HEAL",
                         sender=self.i.owner,
                         receiver=msg.receiver,
                         value=2

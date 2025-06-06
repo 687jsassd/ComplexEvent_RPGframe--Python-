@@ -26,7 +26,7 @@ import uuid
 import random
 import copy
 import logging
-import BaseGameClasses as bgc
+import basegameclasses as bgc
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -154,7 +154,7 @@ class Handler:
                 'GameMessage', Any], Tuple[Any, Any, bool]]] = {}
     # 由于参数 'msg' 未使用，将其移除
 
-    def _noop_handler(self) -> Tuple[int, EventResult, str]:
+    def _noop_handler(self, *args, **kwargs) -> Tuple[int, EventResult, str]:
         return (0, EventResult.CONTINUE, "无操作")
 
     def register(self, obj: Union[bgc.Character, bgc.Skill, bgc.Item]):
@@ -381,7 +381,7 @@ def _handle_attack(msg: 'GameMessage') -> Tuple[int, EventResult, str]:
     if msg.receiver and msg.sender:
         ret_msg = msg.create(
             messagechain=msg.messagechain,
-            type='DAMAGE',
+            msg_type='DAMAGE',
             sender=msg.sender,
             receiver=msg.receiver,
             value=0,
@@ -811,7 +811,7 @@ class MessageProcessor:
         # 全量广播修改(MODIFY)消息
         modify_msg = msg.create(
             messagechain=msg.messagechain,
-            type='MODIFY',
+            msg_type='MODIFY',
             sender=msg.sender,
             receiver=msg.receiver,
             value=modify_value,
