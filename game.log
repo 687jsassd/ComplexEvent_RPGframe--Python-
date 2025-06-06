@@ -3068,3 +3068,531 @@
 2025-06-06 21:57:27,099 - evframe - INFO - 清空所有监听器
 2025-06-06 21:57:27,099 - evframe - INFO - 消息链已经清空
 2025-06-06 21:57:27,099 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:27,337 - evframe - INFO - 已经替换SKILL_SKILLA的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 已经注册SKILL_SKILLA的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000221C49A21B0>,UUID:7b7707a9-644a-492f-b115-e7256eca3474
+2025-06-06 22:03:27,338 - evframe - INFO - 已经替换SKILL_SKILLB的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 已经注册SKILL_SKILLB的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000221C49A22A0>,UUID:b2da1bc2-6b22-42d3-a19c-61420185b398
+2025-06-06 22:03:27,338 - evframe - INFO - 已经替换SKILL_SKILLC的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 已经注册SKILL_SKILLC的MAIN阶段处理器
+2025-06-06 22:03:27,338 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000221C49A2360>,UUID:3a563d35-b302-4d4e-8568-a24b7b99c5ac
+2025-06-06 22:03:27,338 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:27,338 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,338 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000221C49A21B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,338 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000221C49A22A0> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,338 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000221C49A2360> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,338 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:27,338 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,338 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:27,339 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:27,339 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:27,340 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:27,340 - evframe - INFO - 已经替换SKILL_SKILLX的MAIN阶段处理器
+2025-06-06 22:03:27,340 - evframe - INFO - 已经注册SKILL_SKILLX的MAIN阶段处理器
+2025-06-06 22:03:27,340 - evframe - INFO - 成功注册<__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000221C466AD20>,UUID:15a34f6d-ee36-42eb-98a2-3980606274e5
+2025-06-06 22:03:27,340 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:27,340 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,340 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000221C466AD20> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,340 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:27,340 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,340 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:27,340 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:27,340 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:27,340 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:27,341 - evframe - INFO - 已经替换SKILL_SKILLD的MAIN阶段处理器
+2025-06-06 22:03:27,341 - evframe - INFO - 已经注册SKILL_SKILLD的MAIN阶段处理器
+2025-06-06 22:03:27,341 - evframe - INFO - 成功注册<__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000221C49A18B0>,UUID:08104648-2ae3-4bb5-a7ee-160ea92246d4
+2025-06-06 22:03:27,341 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:27,341 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,341 - evframe - INFO - 添加消息链变量: skillD.testvar = 1
+2025-06-06 22:03:27,341 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000221C49A18B0> 已处理消息
+2025-06-06 22:03:27,341 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:27,341 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,341 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:27,341 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:27,341 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:27,341 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:27,342 - evframe - INFO - 已经替换SKILL_THORNARMORSKILL的MAIN阶段处理器
+2025-06-06 22:03:27,342 - evframe - INFO - 已经注册SKILL_THORNARMORSKILL的MAIN阶段处理器
+2025-06-06 22:03:27,342 - evframe - INFO - 成功注册<__main__.ThornArmorSkill object at 0x00000221C49A0140>,UUID:8602993c-a946-480b-8a2f-5ebf6af1f3a7
+2025-06-06 22:03:27,342 - evframe - INFO - 已经替换SKILL_HEALSKILL的MAIN阶段处理器
+2025-06-06 22:03:27,342 - evframe - INFO - 已经注册SKILL_HEALSKILL的MAIN阶段处理器
+2025-06-06 22:03:27,342 - evframe - INFO - 成功注册<__main__.HealSkill object at 0x00000221C49A2B70>,UUID:d0ff7439-1b61-4150-94c3-4bc828f22f91
+2025-06-06 22:03:27,342 - evframe - INFO - 成功注册<__main__.ThornArmorSkill object at 0x00000221C49A2C30>,UUID:dda132a1-ddbd-4b5b-897d-b53b9d7337d5
+2025-06-06 22:03:27,342 - evframe - INFO - 成功注册<__main__.HealSkill object at 0x00000221C49A2CF0>,UUID:f0fbb8fa-25ab-467e-b6b0-f7ea9d196206
+2025-06-06 22:03:27,342 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:27,342 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,342 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000221C49A0140> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,342 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000221C49A2B70> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,342 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000221C49A2C30> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,342 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000221C49A2CF0> 无法处理消息或不响应此消息
+2025-06-06 22:03:27,342 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:27,342 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:27,342 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:27,342 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:27,342 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:27,342 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:37,279 - evframe - INFO - 已经替换SKILL_SKILLA的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 已经注册SKILL_SKILLA的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70>,UUID:88827b5a-7b02-45e5-8fd4-91c33d20bb05
+2025-06-06 22:03:37,279 - evframe - INFO - 已经替换SKILL_SKILLB的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 已经注册SKILL_SKILLB的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060>,UUID:a1c7e7e3-10e5-491b-bdb7-5aeaa73db853
+2025-06-06 22:03:37,279 - evframe - INFO - 已经替换SKILL_SKILLC的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 已经注册SKILL_SKILLC的MAIN阶段处理器
+2025-06-06 22:03:37,279 - evframe - INFO - 成功注册<__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120>,UUID:88baf0d1-e005-4b20-a212-2b62a5dc3ca2
+2025-06-06 22:03:37,280 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:37,280 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,280 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,280 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,280 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - 消息[ATTACK|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,280 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,280 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,280 - evframe - INFO - 接收到DAMAGE消息
+2025-06-06 22:03:37,280 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 已处理消息
+2025-06-06 22:03:37,280 - evframe - INFO - 注册自定义modifier: SkillB_custom_modifier
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 已处理消息
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:[(<ModifierType.SET_VALUE: 1>, <function TestSystem.test_complex_skills_interaction.<locals>.SkillA.effect.<locals>.<lambda> at 0x00000192DA52EB60>), ('SkillB_custom_modifier', 0)]
+2025-06-06 22:03:37,280 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,280 - evframe - INFO - >不重复对象< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,280 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,280 - evframe - INFO - >全量< 广播消息[MODIFY|MessagePhase.NONE]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - 
+接收DAMAGE延迟消息
+2025-06-06 22:03:37,281 - evframe - INFO - >不重复对象< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - >全量< 广播消息[MODIFY|MessagePhase.NONE]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,281 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:[]
+2025-06-06 22:03:37,281 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,281 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,281 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 已处理消息
+2025-06-06 22:03:37,281 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:[]
+2025-06-06 22:03:37,281 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,281 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,281 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,281 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,281 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,281 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,281 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,282 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,282 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,282 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,282 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,282 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,282 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - 消息[ATTACK|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,282 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,282 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,282 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,282 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,282 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,282 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,282 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,283 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,283 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,283 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 已处理消息
+2025-06-06 22:03:37,283 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,283 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,283 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,283 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,283 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,283 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,283 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,283 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,283 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,283 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillA object at 0x00000192DA4F1F70> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillB object at 0x00000192DA4F2060> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - [广播] <__main__.TestSystem.test_complex_skills_interaction.<locals>.SkillC object at 0x00000192DA4F2120> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,283 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,283 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,284 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,284 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,284 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:37,284 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,284 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:37,284 - evframe - INFO - 已经替换SKILL_SKILLX的MAIN阶段处理器
+2025-06-06 22:03:37,284 - evframe - INFO - 已经注册SKILL_SKILLX的MAIN阶段处理器
+2025-06-06 22:03:37,284 - evframe - INFO - 成功注册<__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150>,UUID:6981de00-e934-42c7-be0f-a1019d79d986
+2025-06-06 22:03:37,284 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:37,284 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,284 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,284 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,284 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,284 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,284 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,284 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,284 - evframe - INFO - 消息[ATTACK|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,284 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,284 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,285 - evframe - INFO - 接收到DAMAGE消息
+2025-06-06 22:03:37,285 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,285 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 已处理消息
+2025-06-06 22:03:37,285 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:[(<ModifierType.SET_VALUE: 1>, 25)]
+2025-06-06 22:03:37,285 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,285 - evframe - INFO - >不重复对象< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,285 - evframe - INFO - >全量< 广播消息[MODIFY|MessagePhase.NONE]
+2025-06-06 22:03:37,285 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,285 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,285 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,285 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,285 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:[]
+2025-06-06 22:03:37,285 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,285 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,285 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,285 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,285 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:[]
+2025-06-06 22:03:37,285 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,285 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,285 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,285 - evframe - INFO - [广播] <__main__.TestSystem.test_modifiers.<locals>.SkillX object at 0x00000192DA4F2150> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,286 - evframe - INFO - 消息[ATTACK|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,286 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,286 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,286 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,286 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:37,286 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,286 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:37,286 - evframe - INFO - 已经替换SKILL_SKILLD的MAIN阶段处理器
+2025-06-06 22:03:37,286 - evframe - INFO - 已经注册SKILL_SKILLD的MAIN阶段处理器
+2025-06-06 22:03:37,286 - evframe - INFO - 成功注册<__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480>,UUID:aba9c5ad-044c-4282-9ba8-08d9fdf76f54
+2025-06-06 22:03:37,286 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:37,286 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,286 - evframe - INFO - 添加消息链变量: skillD.testvar = 2
+2025-06-06 22:03:37,286 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 已处理消息
+2025-06-06 22:03:37,286 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,286 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,286 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,286 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,286 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,286 - evframe - INFO - 消息[ATTACK|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,286 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,286 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,286 - evframe - INFO - 接收到DAMAGE消息
+2025-06-06 22:03:37,286 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,288 - evframe - INFO - 注册自定义modifier: SkillD_custom_modifier
+2025-06-06 22:03:37,288 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 已处理消息
+2025-06-06 22:03:37,288 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:[('SkillD_custom_modifier', 0)]
+2025-06-06 22:03:37,288 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,288 - evframe - INFO - >不重复对象< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,288 - evframe - INFO - >全量< 广播消息[MODIFY|MessagePhase.NONE]
+2025-06-06 22:03:37,288 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,288 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,288 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,288 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,288 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:[]
+2025-06-06 22:03:37,288 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,288 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,288 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,288 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,288 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:[]
+2025-06-06 22:03:37,288 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,288 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,289 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.TestSystem.test_msgchainvar.<locals>.SkillD object at 0x00000192DA4F2480> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,289 - evframe - INFO - 消息[ATTACK|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,289 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,289 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,289 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,289 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:37,289 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,289 - evframe - INFO - 重置消息管理器
+2025-06-06 22:03:37,289 - evframe - INFO - 已经替换SKILL_THORNARMORSKILL的MAIN阶段处理器
+2025-06-06 22:03:37,289 - evframe - INFO - 已经注册SKILL_THORNARMORSKILL的MAIN阶段处理器
+2025-06-06 22:03:37,289 - evframe - INFO - 成功注册<__main__.ThornArmorSkill object at 0x00000192DA4F2720>,UUID:6fab5378-50d0-42e8-ac2b-9a689e13106f
+2025-06-06 22:03:37,289 - evframe - INFO - 已经替换SKILL_HEALSKILL的MAIN阶段处理器
+2025-06-06 22:03:37,289 - evframe - INFO - 已经注册SKILL_HEALSKILL的MAIN阶段处理器
+2025-06-06 22:03:37,289 - evframe - INFO - 成功注册<__main__.HealSkill object at 0x00000192DA4F18B0>,UUID:428f4f32-0893-4246-a06c-ebb575fe4be1
+2025-06-06 22:03:37,289 - evframe - INFO - 成功注册<__main__.ThornArmorSkill object at 0x00000192DA4F1790>,UUID:461f3d62-95f6-4e61-abda-154a55bfe67c
+2025-06-06 22:03:37,289 - evframe - INFO - 成功注册<__main__.HealSkill object at 0x00000192DA4F1640>,UUID:8081294f-c60f-4b7d-8cba-fd97ea4c193d
+2025-06-06 22:03:37,289 - evframe - INFO - 接收到ATTACK消息
+2025-06-06 22:03:37,289 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,289 - evframe - INFO - 消息[ATTACK|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,289 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.PRE]
+2025-06-06 22:03:37,289 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,289 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,289 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - 消息[ATTACK|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,290 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.MAIN]
+2025-06-06 22:03:37,290 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,290 - evframe - INFO - 接收到DAMAGE消息
+2025-06-06 22:03:37,290 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,290 - evframe - INFO - 
+接收DAMAGE延迟消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 已处理消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,290 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,290 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,290 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,290 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,290 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,290 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 已处理消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,290 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,290 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,290 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,290 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[ATTACK|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[ATTACK|MessagePhase.POST]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 ATTACK 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 
+接收DAMAGE延迟消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 已处理消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,291 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,291 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,291 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,291 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 已处理消息
+2025-06-06 22:03:37,292 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,292 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,292 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,292 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,292 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,292 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,292 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,292 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,292 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,292 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,292 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,292 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,292 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,292 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,293 - evframe - INFO - 
+接收DAMAGE延迟消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 已处理消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,293 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,293 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,293 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,293 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,293 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,293 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 已处理消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,293 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,293 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,293 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,293 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,293 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,293 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,293 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,293 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,293 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,294 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,294 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,294 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,294 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - 消息[DAMAGE|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,294 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.PRE]
+2025-06-06 22:03:37,294 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,294 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - 消息[DAMAGE|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,294 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.MAIN]
+2025-06-06 22:03:37,294 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,294 - evframe - INFO - >全量< 广播消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - 接收到HEAL消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 已处理消息
+2025-06-06 22:03:37,294 - evframe - INFO - 消息[DAMAGE|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,294 - evframe - INFO - 正在加工消息[DAMAGE|MessagePhase.POST]
+2025-06-06 22:03:37,294 - evframe - INFO - 处理 DAMAGE 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,294 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,294 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - 消息[HEAL|MessagePhase.PRE]的modifiers有:None
+2025-06-06 22:03:37,295 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.PRE]
+2025-06-06 22:03:37,295 - evframe - INFO - 处理 HEAL 类型 MessagePhase.PRE阶段 消息
+2025-06-06 22:03:37,295 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - 消息[HEAL|MessagePhase.MAIN]的modifiers有:None
+2025-06-06 22:03:37,295 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.MAIN]
+2025-06-06 22:03:37,295 - evframe - INFO - 处理 HEAL 类型 MessagePhase.MAIN阶段 消息
+2025-06-06 22:03:37,295 - evframe - INFO - >全量< 广播消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F2720> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F18B0> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.ThornArmorSkill object at 0x00000192DA4F1790> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - [广播] <__main__.HealSkill object at 0x00000192DA4F1640> 无法处理消息或不响应此消息
+2025-06-06 22:03:37,295 - evframe - INFO - 消息[HEAL|MessagePhase.POST]的modifiers有:None
+2025-06-06 22:03:37,295 - evframe - INFO - 正在加工消息[HEAL|MessagePhase.POST]
+2025-06-06 22:03:37,295 - evframe - INFO - 处理 HEAL 类型 MessagePhase.POST阶段 消息
+2025-06-06 22:03:37,295 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,295 - evframe - INFO - 清空所有监听器
+2025-06-06 22:03:37,295 - evframe - INFO - 消息链已经清空
+2025-06-06 22:03:37,295 - evframe - INFO - 重置消息管理器

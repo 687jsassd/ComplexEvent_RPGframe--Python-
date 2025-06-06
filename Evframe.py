@@ -154,7 +154,7 @@ class Handler:
                 'GameMessage', Any], Tuple[Any, Any, bool]]] = {}
     # 由于参数 'msg' 未使用，将其移除
 
-    def _noop_handler(self, *args, **kwargs) -> Tuple[int, EventResult, str]:
+    def _noop_handler(self, _) -> Tuple[int, EventResult, str]:
         return (0, EventResult.CONTINUE, "无操作")
 
     def register(self, obj: Union[bgc.Character, bgc.Skill, bgc.Item]):
