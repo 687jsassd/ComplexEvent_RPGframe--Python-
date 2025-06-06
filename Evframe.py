@@ -1,7 +1,7 @@
 # evframe.py
 """
 Author: assd687
-Version: 0.0.2b
+Version: 0.0.17a
 Description: A simple RPG event trigger frame.
 Date: 2025-06-06
 """
@@ -528,6 +528,8 @@ class MessageManager:
         self.handler = Handler(self.base_handler)
         self.processor = MessageProcessor(self)
         self.uuid = uuid.uuid4()
+        # 长消息终止阈值(默认800，是考虑到一个消息会有None以及拆分后的三个阶段总共四个阶段，尽管None阶段的消息不处理)
+        self.stopnum = 800
 
     def register(self, objec: 'ListenerProtocal') -> None:
         '''
@@ -700,10 +702,19 @@ class MessageManager:
 
     def execte(self):
         '''执行消息队列中的所有消息'''
+        remain_stop_num = self.stopnum
         while self.messagechain.i and self.execte_single():
-            pass
+            remain_stop_num -= 1
+            if remain_stop_num <= 0:
+                logger.info('单消息队列过长，已停止执行')
+                raise ValueError('长消息错误:单消息队列过长，已停止执行')
         # 执行结束后，初始化消息链，以重用
         self.messagechain.i.clear()
+
+    def set_stopnum(self, stopnum: int):
+        """设置长消息阈值"""
+        if stopnum >= 1:
+            self.stopnum = stopnum
 
     def __bool__(self):
         '''

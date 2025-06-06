@@ -1,7 +1,7 @@
 # basegameclasses.py
 """
 # Author: assd687
-# Version: 0.0.2b
+# Version: 0.0.15a
 # Description: Base classes of RPG.(Skills,Character,Items etc.)
 # Date: 2025-06-06
 """
@@ -23,8 +23,8 @@ class BasicSkillAttributes:
     包含技能的名称、描述以及技能的拥有者。
     """
     name: str
-    description: str
     owner: 'Character'  # 拥有者
+    description: Optional[str] = None
 
 
 class Skill(ABC):
